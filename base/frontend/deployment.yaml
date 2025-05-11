@@ -1,20 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp-deployment
+  name: my-vite-deployment
 spec:
   replicas: 1 # default replica count
-  selector:
-    matchLabels:
-      app: my-vite
   template:
-    metadata:
-      labels:
-        app: my-vite
     spec:
       containers:
       - name: my-vite
         image: vite-project
+        imagePullPolicy: Never
         resources:
           limits:
             cpu: "500m"

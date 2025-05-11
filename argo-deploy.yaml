@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: grade-submission-dev
+  name: fullstack-learn
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/gzd2032/argocd-kubernetes-gitops-tutorial.git
+    repoURL: https://github.com/gzd2032/learn-argo
     targetRevision: HEAD
-    path: kustomize/overlays/dev
+    path: overlays/dev
   destination:
     server: https://kubernetes.default.svc
-    namespace: grade-demo
+    namespace: fullstack-learn
   syncPolicy:
     automated:
       prune: true
