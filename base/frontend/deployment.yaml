@@ -1,10 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-vite-deployment
+  name: myapp-deployment
 spec:
   replicas: 1 # default replica count
+  selector:
+    matchLabels:
+      app: my-vite
   template:
+    metadata:
+      labels:
+        app: my-vite
     spec:
       containers:
       - name: my-vite
